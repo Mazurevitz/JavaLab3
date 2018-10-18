@@ -7,6 +7,8 @@ package javaclientl3;
 
 import calculation.CalcBeanRemote;
 import javax.ejb.EJB;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 
 /**
  *
@@ -14,15 +16,17 @@ import javax.ejb.EJB;
  */
 public class Main {
 
-    @EJB
+//    @EJB
     private static CalcBeanRemote calcBean;
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NamingException {
+        
+        InitialContext ctx = new InitialContext();
+        calcBean = (CalcBeanRemote)ctx.lookup("calculator");
         System.out.println("1: " + calcBean.add(2, 3));
-
     }
     
 }

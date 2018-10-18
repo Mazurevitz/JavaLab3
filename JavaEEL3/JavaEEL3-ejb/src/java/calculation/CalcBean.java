@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
  *
  * @author wojte
  */
-@Stateless
+@Stateless(mappedName = "calculator")
 public class CalcBean implements CalcBeanRemote {
 
     @Override
