@@ -5,17 +5,24 @@
  */
 package javaclientl3;
 
+import calculation.CalcBeanRemote;
+import javax.ejb.EJB;
+
 /**
  *
  * @author wojte
  */
 public class Main {
 
+    @EJB
+    private static CalcBeanRemote calcBean;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("1: " + calcBean.add(2, 3));
+
     }
     
 }

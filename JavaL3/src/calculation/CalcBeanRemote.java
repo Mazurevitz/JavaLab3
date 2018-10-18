@@ -13,5 +13,7 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface CalcBeanRemote {
+
+    int add(int arg1, int arg2);
     
 }

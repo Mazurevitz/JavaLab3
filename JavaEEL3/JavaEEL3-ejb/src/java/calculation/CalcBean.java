@@ -14,6 +14,10 @@ import javax.ejb.Stateless;
 @Stateless
 public class CalcBean implements CalcBeanRemote {
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @Override
+    public int add(int arg1, int arg2) {
+        return arg1 + arg2;
+    }
+    
+    
 }
