@@ -5,15 +5,16 @@
  */
 package calculation;
 
-import javax.ejb.Remote;
+import java.util.List;
+import javax.ejb.Local;
 
 /**
  *
  * @author wojte
  */
-@Remote
-public interface MultiplierBeanRemote {
-
-    int multiply(int arg1, int arg2);
+@Local
+public interface StudentBeanLocal {
+    
+    Student findTheBest(List<Student> student);
     
 }
