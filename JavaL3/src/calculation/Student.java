@@ -35,6 +35,11 @@ public class Student implements Serializable {
     public void setAverage(double average) {
         this.average = average;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" + "name=" + name + ", average=" + average + '}';
+    }
     
     
     

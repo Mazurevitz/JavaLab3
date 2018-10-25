@@ -7,9 +7,13 @@ package javaclientl3;
 
 import calculation.CalcBeanRemote;
 import calculation.MultiplierBeanRemote;
+import calculation.Student;
+import calculation.StudentBean2Remote;
 import calculation.SummBean1Remote;
 import calculation.SummBean2Remote;
 import calculation.SummBean3Remote;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.naming.InitialContext;
@@ -26,15 +30,27 @@ public class Main {
 //        private static SummBean1Remote summBean1;
 //        private static SummBean2Remote summBean2;
 //        private static SummBean3Remote summBean3;
+//    @EJB
+//        private static MultiplierBeanRemote multiplierBean;
     @EJB
-        private static MultiplierBeanRemote multiplierBean;
+        private static StudentBean2Remote studentBean2;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws NamingException {
         
-        System.out.println(multiplierBean.multiply(5, 7));
+        List<Student> students = Arrays.asList(
+                new Student("Wojciech", 4.5),
+                new Student("Mariusz", 3.0),
+                new Student("Zenek", 2.0)
+        );
+        
+        System.out.println("R1: " + students);
+        studentBean2.findTheBest(students);
+        System.out.println("R2: " + students);
+
+//        System.out.println(multiplierBean.multiply(5, 7));
         
 //        InitialContext ctx = new InitialContext();
 ////        calcBean = (CalcBeanRemote)ctx.lookup("calculator");
